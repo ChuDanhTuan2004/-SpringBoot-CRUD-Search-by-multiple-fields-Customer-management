@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update</h1>
+<th:block th:if="${message}">
+  <p th:text="${message}"></p>
+</th:block>
+<a href="/customers">Back to list</a>
+<form action="/customers/update/{id}" method="post" th:object="${customer}">
+  <input type="hidden" name="id" th:value="${customer.id}">
+  <table>
+    <tr>
+      <td>
+        <span>First name: </span>
+      </td>
+      <td>
+        <input type="text" name="firstName" th:value="*{firstName}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span>Last name: </span>
+      </td>
+      <td>
+        <input type="text" name="lastName" th:value="*{lastName}">
+      </td>
+    </tr>
+    <tr>
+      <button>Update</button>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

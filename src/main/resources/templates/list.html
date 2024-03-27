@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Customer list</h1>
+<a href="/customers/create">Add customer</a>
+<table border="">
+    <tr>
+        <td><strong>ID</strong></td>
+        <td><strong>First name</strong></td>
+        <td><strong>Last name</strong></td>
+        <td><strong>Update</strong></td>
+        <td><strong>Delete</strong></td>
+    </tr>
+    <th:block th:each="customer, num : ${customers}">
+        <tr>
+            <td th:text="${num.count}"></td>
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <td>
+                <a th:href="@{/customers/update/__${customer.id}__}">Update</a>
+            </td>
+            <td>
+                <a th:href="@{/customers/delete/__${customer.id}__}">Delete</a>
+            </td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

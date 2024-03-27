@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create</h1>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<a href="/customers">Back to list</a>
+<form action="/customers/create" method="post">
+    <table>
+        <tr>
+            <td>
+                <span>First name: </span>
+            </td>
+            <td>
+                <input type="text" name="firstName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Last name: </span>
+            </td>
+            <td>
+                <input type="text" name="lastName">
+            </td>
+        </tr>
+        <tr>
+            <button>Add</button>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
